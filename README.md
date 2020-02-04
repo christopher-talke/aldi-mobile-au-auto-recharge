@@ -32,7 +32,7 @@ When a recharge is triggered, this would email or text message a notification to
 
 **Design & Prototype**
 
-I've been really trying to dip my feet into design, given this will be a pretty simple service so a simple UI should match this. I went for a very flat design overall, with a few useful configuration / inputs and an easy to digest audit log to review!
+I've been really trying to dip my feet into design, given this will be a pretty simple service, a simple UI was required to match this. I went for a very flat design overall, with a few useful configuration / inputs and an easy to digest audit log to review the applications actions.
 
 Desktop Version: [Click Here](https://www.figma.com/proto/esZRwgcc6qULeIpf2ph0kz/Unofficial-Pay-As-You-Go-Automatic-Recharge-Service?node-id=7%3A23&scaling=min-zoom)
 
