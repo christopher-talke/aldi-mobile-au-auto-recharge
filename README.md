@@ -1,4 +1,4 @@
-# Aldi Mobile Auto Recharging
+# Unofficial Aldi Mobile Auto Recharging
 
 This is a mini app to allow auto recharging of Aldi Mobile Australia Pay-as-you-go services, their web portal doesn't support this at all, however, I found that their entire backend portal is Server Side Rendered and I've been playing with headless Chrome allot lately, so I figure... why not automate this?
 
