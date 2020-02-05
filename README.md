@@ -20,7 +20,6 @@ When a recharge is triggered, this would email or text message a notification to
 - [ ] Settings UI
 - [ ] Log UI
 - [ ] Setup UI (Bonus)
-- [ ] User Management UI (Bonus)
 
 **Technology**
 
@@ -38,42 +37,47 @@ When a recharge is triggered, this would email or text message a notification to
 **Database Design**
 
 Service Settings Table
-Column | Type | PK | FK | AR | Nullable
--------------- | ------------- | ------------- | ------------- | ------------- | -------------
-id | int | true | - | true | false
-number | varchar | - | - | - | true
-password | varchar | - | - | - | true
-minimumValue | int | - | - | - | false
-rechargeValue | int | - | - | - | false
-setupComplete | bol | - | - | - | false
+
+| Column        | Type    | PK   | FK  | AR   | Nullable |
+| ------------- | ------- | ---- | --- | ---- | -------- |
+| id            | int     | true | -   | true | false    |
+| number        | varchar | -    | -   | -    | true     |
+| password      | varchar | -    | -   | -    | true     |
+| minimumValue  | int     | -    | -   | -    | false    |
+| rechargeValue | int     | -    | -   | -    | false    |
+| setupComplete | bol     | -    | -   | -    | false    |
 
 Recharge Values Table
-Column | Type | PK | FK | AR | Nullable
--------------- | ------------- | ------------- | ------------- | ------------- | -------------
-id | int | true | - | true | false
-friendlyName | varchar | - | - | - | true
-path | varchar | - | - | - | true
+
+| Column       | Type    | PK   | FK  | AR   | Nullable |
+| ------------ | ------- | ---- | --- | ---- | -------- |
+| id           | int     | true | -   | true | false    |
+| friendlyName | varchar | -    | -   | -    | true     |
+| path         | varchar | -    | -   | -    | true     |
 
 Notifications Table
-Column | Type | PK | FK | AR | Nullable
--------------- | ------------- | ------------- | ------------- | ------------- | -------------
-id | int | true | - | true | false
-type | varchar | - | - | - | true
-value | varchar | - | - | - | true
+
+| Column | Type    | PK   | FK  | AR   | Nullable |
+| ------ | ------- | ---- | --- | ---- | -------- |
+| id     | int     | true | -   | true | false    |
+| type   | varchar | -    | -   | -    | true     |
+| value  | varchar | -    | -   | -    | true     |
 
 Log Table
-Column | Type | PK | FK | AR | Nullable
--------------- | ------------- | ------------- | ------------- | ------------- | -------------
-id | int | true | - | true | false
-value | varchar | - | - | - | true
+
+| Column | Type    | PK   | FK  | AR   | Nullable |
+| ------ | ------- | ---- | --- | ---- | -------- |
+| id     | int     | true | -   | true | false    |
+| value  | varchar | -    | -   | -    | true     |
 
 User Table
-Column | Type | PK | FK | AR | Nullable
--------------- | ------------- | ------------- | ------------- | ------------- | -------------
-id | int | true | - | true | false
-username | varchar | - | - | - | true
-password | varchar | - | - | - | true
-active | bol | - | - | - | false
+
+| Column   | Type    | PK   | FK  | AR   | Nullable |
+| -------- | ------- | ---- | --- | ---- | -------- |
+| id       | int     | true | -   | true | false    |
+| username | varchar | -    | -   | -    | true     |
+| password | varchar | -    | -   | -    | true     |
+| active   | bol     | -    | -   | -    | false    |
 
 **Example Data Structure**
 
@@ -98,8 +102,9 @@ Below is an example data structure for the main dashboard, based on the database
 					"friendlyName": "Option 3 - $35.00",
 					"path": "payg35"
 				}
-			]
-		}
+      ]
+    },
+    "setupComplete" : true
 	},
 	"notificationSettings": {
 		"emailAddresses": [
