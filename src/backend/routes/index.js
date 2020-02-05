@@ -7,4 +7,4 @@ router.get('/', function(req, res, next) {
   res.json(dashboard);
 });
 
-module.exports = router;
+export default router;

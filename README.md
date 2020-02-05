@@ -34,6 +34,19 @@ When a recharge is triggered, this would email or text message a notification to
 - Reactstrap
 - Docker
 
+**Development Setup**
+
+Database via Docker Container
+
+```sh
+# Create Volume
+$ docker volume create postgres_dev
+
+# Build Container with env var's, attached volume and expose ports to localhost
+$ docker run --name postgres_dev -e POSTGRES_USER=postgres_dev -e POSTGRES_PASSWORD=postgres_dev -v postgres_dev:/var/lib/postgresql/data -p 5432:5432 -d postgres
+
+```
+
 **Database Design**
 
 Service Settings Table
@@ -101,8 +114,7 @@ Below is an example data structure for the main dashboard, based on the database
 				{
 					"friendlyName": "Option 3 - $35.00",
 					"path": "payg35"
-				}
-      ]
+				}]
     },
     "setupComplete" : true
 	},

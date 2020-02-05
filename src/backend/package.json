@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node -r esm ./bin/www",
-    "dev": "nodemon npm run start"
+    "dev": "env NODE_ENV=dev nodemon -r esm ./bin/www"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
