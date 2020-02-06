@@ -1,12 +1,19 @@
 import Sequelize from 'sequelize';
 import Models from './models';
+import seedData from './seed';
+
+const ENVIRONMENT = process.env.NODE_ENV === 'dev';
+const DATABASE = ENVIRONMENT ? 'amaur_dev' : 'amaur_prod';
+const HOST = ENVIRONMENT ? 'localhost' : process.env.DB_HOST;
+const USERNAME = ENVIRONMENT ? 'postgres_dev' : process.env.DB_USERNAME;
+const PASSWORD = ENVIRONMENT ? 'postgres_dev' : process.env.DB_PASSWORD;
 
 // Database Connection
-const database = new Sequelize('postgres_dev', 'postgres_dev', 'postgres_dev', {
-  host: 'localhost',
+const database = new Sequelize(DATABASE, USERNAME, PASSWORD, {
+  host: HOST,
   dialect: 'postgres',
-  logging: false,
-  sync: process.env.NODE_ENV === 'dev'
+  logging: true,
+  sync: true
 });
 
 // Initiate connection to database and sync models
@@ -22,11 +29,13 @@ const databaseInit = async () => {
 
   try {
     for (var model in Models) {
-      database.define(model, Models[model]).sync();
+      await database.define(model, Models[model]).sync({ force: true });
     }
   } catch (err) {
     console.error('💥 Unable to sync database models:', err);
   }
+
+  await seedData(ENVIRONMENT);
 };
 
 export { database, databaseInit };

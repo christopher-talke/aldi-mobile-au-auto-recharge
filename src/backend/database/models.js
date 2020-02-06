@@ -1,4 +1,4 @@
-import { STRING, INTEGER, BOOLEAN } from 'sequelize';
+import { STRING, INTEGER, BOOLEAN, ENUM } from 'sequelize';
 
 const Models = {
   // Service Settings
@@ -16,7 +16,8 @@ const Models = {
   },
   // Notifications Settings
   notificationSettings: {
-    type: { type: INTEGER, nullable: false },
+    // type: { type: INTEGER, nullable: false },
+    type: { type: ENUM, values: ['email', 'mobile', 'other'] },
     value: { type: STRING, unique: true }
   },
   // Logs

@@ -16,10 +16,10 @@ When a recharge is triggered, this would email or text message a notification to
 - [ ] Email Notification
 - [ ] SMS Notification
 - [ ] Authentication
-- [ ] Login UI
-- [ ] Settings UI
-- [ ] Log UI
-- [ ] Setup UI (Bonus)
+- [X] Login UI
+- [X] Settings UI
+- [X] Log UI
+- [X] Setup UI (Bonus)
 
 **Technology**
 

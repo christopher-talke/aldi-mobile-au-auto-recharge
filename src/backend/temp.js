@@ -13,8 +13,14 @@ const dashboard = {
     setupComplete: true
   },
   notificationSettings: {
-    emailAddresses: ['john.doe@gmail.com', 'jane.smith@gmail.com'],
-    mobileNumbers: ['0400000000', '0400000001']
+    emailAddresses: [
+      { value: 'john.doe@gmail.com', type: 'email' },
+      { value: 'jane.smith@gmail.com', type: 'email' }
+    ],
+    mobileNumbers: [
+      { value: '0400000000', type: 'mobile' },
+      { value: '0400000001', type: 'mobile' }
+    ]
   },
   auditLog: [
     '2020-02-02 - 0800 - Balance check complete...',
