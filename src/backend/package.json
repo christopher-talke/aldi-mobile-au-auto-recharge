@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node -r esm -r dotenv/config ./bin/www",
-    "dev": "env NODE_ENV=dev nodemon -r esm ./bin/www"
+    "dev": "env NODE_ENV=dev nodemon -r esm -r dotenv/config ./bin/www"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",

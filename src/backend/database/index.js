@@ -12,7 +12,7 @@ const PASSWORD = ENVIRONMENT ? 'postgres_dev' : process.env.DB_PASSWORD;
 const database = new Sequelize(DATABASE, USERNAME, PASSWORD, {
   host: HOST,
   dialect: 'postgres',
-  logging: true,
+  logging: false,
   sync: true
 });
 
