@@ -3,7 +3,7 @@ import cookieParser from 'cookie-parser';
 
 import { logger } from './require';
 import { databaseInit } from './database';
-import checkBalance from './controller/balance';
+import rechargePipeline from './controller/pipelines';
 
 import indexRouter from './routes/index';
 import authRouter from './routes/auth';
@@ -20,9 +20,11 @@ app.use('/', indexRouter);
 app.use('/auth', authRouter);
 
 // Test Database
-(async () => {
-  await databaseInit();
-  console.log(await checkBalance());
-})();
+await databaseInit();
+
+// (async () => {
+//   await databaseInit();
+//   await rechargePipeline();
+// })();
 
 module.exports = app;

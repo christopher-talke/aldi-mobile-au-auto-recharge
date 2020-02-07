@@ -4,9 +4,8 @@ const log = async value => {
   const {
     models: { logs }
   } = database;
-
-  // Get Settings from Database
-  await logs.create({ value }).catch(err => console.error(`💥 There was an issue logging this action`));
+  await logs.create({ value }).catch(err => console.error(`💥 There was an issue logging this action: ${err}`));
+  return;
 };
 
 export default log;
